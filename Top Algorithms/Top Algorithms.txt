@@ -1,0 +1,59 @@
+Number Theory 
+1. Sieve of Eratosthenes 
+Sieve of Eratosthenes is an efficient algorithm which is used to find all the prime numbers less than or equal to ‘n’. 
+Time Complexity : O(logn)
+2. Segmented Sieve 
+This algorithm is used to find all the prime numbers within a given range. It divides the range [0..n-1] in different segments and compute primes in all segments one by one. It uses Sieve of Eratosthenes Algorithm.
+Time Complexity : O(logn) 
+3. Prime Factorization using Sieve 
+This algorithm is used to find the prime factors of a given number. It can be seen as an application of Sieve.
+Time Complexity : O(logn) 
+
+
+
+4. Goldbach’s Conjecture Algorithm
+It states that, “Every even integer greater than 2 can be expressed as the sum of two primes“. In other words, a Goldbach number is a positive integer that can be expressed as the sum of two primes.
+Time Complexity : O(log^2(n)) // order of log square n
+5. Optimized Fibonacci Series Solution { Matrix Based Solution }
+This algorithm is used to find the n-th number of a fibonacci series. It is done with the help of matrix manipulation.
+Time Complexity : O(log n)
+6. Wilson’s Theorem
+Wilson’s theorem is for computing (n − 1)! modulo n for large n.
+
+
+
+Searching & Sorting
+1. Binary Search 
+Binary Search is a search algorithm that finds the position of a target value within a sorted array. 
+Time Complexity : O(log n) (base 2)
+2. Ternary Search
+This algorithm is used to find an element in an array. It is similar to binary search where we divide the array into two parts but in this algorithm. In this, we divide the given array into three parts. 
+Time Complexity : O(log n) (base 3)
+3. Merge Sort
+Merge Sort Algorithm is based on divide and conquer approach of problem solving. This algorithm is very useful to sort a sequence of integers of characters.
+Time Complexity : O(nlogn)
+4. Quick Sort
+Quick Sort Algorithm is based on divide and conquer approach of problem solving. This algorithm is very useful to sort a sequence of integers of characters.
+Time Complexity : O(nlogn) // Average case
+Time Complexity : O(n^2) // Worst case 
+
+
+
+5. Rabin-Karp Algorithm 
+It is a string-searching algorithm created by Richard M. Karp and Michael O. Rabin that uses hashing to find an exact match of a pattern string in a text.
+Time Complexity : O(n) 
+6. KMP Algorithm 
+It is a searching algorithm that searches for occurrences of a “word” W within a main “text string” S.
+Time Complexity : O(n)
+7. Z Algorithm
+This algorithm finds all the occurrences of a pattern in a text string in linear time.
+Time Complexity : O(n+m)
+8. Counting Sort 
+Counting Sort is an algorithm for sorting a collection of objects according to keys that are small integers; that is, it is an integer sorting algorithm.
+Time Complexity : O(n+k)
+9. Manacher’s Algorithm 
+This is an efficient algorithm for finding the number of palindromic substrings or finding the longest palindromic substring.
+Time Complexity : O(n) 
+10. Finding Subarrays with given Sum
+There are many problems that ask you to find the number of sub arrays equaling the given sum. Traditional approach will lead you to O(n^3) time complexity. However, it can be solved using the concepts of map.
+Time Complexity : O(log n)
