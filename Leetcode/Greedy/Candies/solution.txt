@@ -1,0 +1,24 @@
+class Solution {
+    public int candy(int[] ratings) {
+        
+     int Candies=0;    
+     int Left[]= new int[ratings.length];
+     int Right[]= new int[ratings.length];
+     Arrays.fill( Left, 1);
+     Arrays.fill(Right, 1);
+        
+    for(int i=1; i<Left.length; i++){
+        if(ratings[i-1]<ratings[i]) Left[i]=Left[i-1]+1;
+    }
+    
+    for(int i=Right.length-2; i>=0; i--){
+        if(ratings[i]>ratings[i+1]) Right[i]=Right[i+1]+1;
+    }
+           
+    for(int i=0; i<ratings.length; i++){
+        Candies+=Math.max(Left[i], Right[i]);
+    }
+        
+    return Candies;
+    }
+}

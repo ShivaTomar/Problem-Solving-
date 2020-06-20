@@ -1,0 +1,35 @@
+class Solution {
+    public boolean checkPossibility(int[] nums) {
+        
+        if(nums.length ==1 || nums.length==0){
+            return true;
+        }
+
+        int temp[]=nums.clone();
+		
+                
+		int Rcount=0;
+		if(temp[0]>temp[1]){
+			temp[0]=temp[1]-1;
+			Rcount++;
+		}
+		
+		for(int right=0; right<nums.length-1; right++){
+			if(temp[right] > temp[right+1]){
+				temp[right+1]=temp[right]+1;
+				Rcount++;
+			}
+		}
+		
+		int Lcount=0;
+		for(int left=nums.length-1; left>0; left--){
+			if(nums[left-1]>nums[left]){
+				nums[left-1]=nums[left]-1;
+				Lcount++;
+			}
+		}
+        
+        return Lcount >1 && Rcount>1 ? false: true;
+		
+		}
+		}

@@ -1,0 +1,48 @@
+class Solution {
+    public int maxArea(int[] height) {
+        
+        int n=height.length;
+		int L=0,R=n-1;
+		int max=0;
+		
+		while(L<n-1){
+			
+			if(height[L]<=height[R]) max=Math.max(max,(height[L]*(R-L)));
+	
+			if(height[L]>height[R]){
+				
+				while(R!=L || height[L]>height[R]){
+		
+					if(height[L]<=height[R]) max=Math.max(max, (height[L]*(R-L)));
+					R--;
+					
+				}
+				R=n-1;	
+				}
+				L++;
+			}
+			
+			L=0;
+			R=n-1;
+			
+			while(R>0){
+
+				if(height[L]>=height[R]) max=Math.max(max,(height[R]*(R-L)));
+	
+				if(height[L]<height[R]){
+					
+					while(R!=L || height[L]>height[R]){
+
+						if(height[R]<=height[L]) max=Math.max(max, (height[R]*(R-L)));
+							L++;
+
+						}
+						L=0;
+					}
+					R--;
+				}
+			
+			
+			return max;
+			}
+			}

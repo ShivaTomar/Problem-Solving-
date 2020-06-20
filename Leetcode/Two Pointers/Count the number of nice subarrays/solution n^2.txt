@@ -1,0 +1,16 @@
+class Solution {
+    public int numberOfSubarrays(int[] nums, int k) {
+        
+        int count=0;
+		for(int i=0; i<nums.length; i++){
+			int x=0;
+		for(int j=i; j<nums.length; j++){
+			if(nums[j]%2!=0) x++;
+			if(x==k) count++;
+			if(x>k) break;
+		}	
+		if(x<k) break;
+		}
+		return count;
+		}
+		}    

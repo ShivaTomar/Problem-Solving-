@@ -1,0 +1,50 @@
+class Solution {
+    public  int lengthOfLIS(int[] nums) {
+        
+        
+        if(nums.length==0){
+            return 0;
+        }
+        if(nums.length==1){
+            return 1;
+        }
+    
+    
+    int maxlength=1;
+
+	int greatest=0;
+	for(int i=0; i<nums.length; i++){
+		greatest=Math.max(greatest, nums[i]);
+	}
+
+	
+	 for(int i=0; i<nums.length-1; i++){
+		 for(int j=i+1; j<nums.length; j++){
+			 int max=nums[i];
+			 int len=1;
+			 if(nums[i]<nums[j]){
+                                 max=nums[j];
+				 len++;
+				 maxlength=Math.max(maxlength, len); 
+                                            }
+ 
+			 for(int k=j+1; k <nums.length; k++){
+				 int sofarmax=0;
+				 if(max<nums[k]){
+					 sofarmax=max;
+					 len++;
+					 max=nums[k];
+				 }
+				maxlength=Math.max(maxlength, len); 
+				
+				if(nums[k]==greatest){
+					max=sofarmax;
+					len=len-1;
+				}
+				
+			 }
+			 }
+			 }
+			 return maxlength;
+			 }
+                         }

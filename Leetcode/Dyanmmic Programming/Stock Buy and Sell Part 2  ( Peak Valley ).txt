@@ -1,0 +1,54 @@
+import java.util.*;
+public class test {
+public static void main(String[] args){
+
+//int arr[]={23,13,25,29,33,19,34,45,65,67};
+//int arr[]={100,180,260,310,40,549,695};
+//int arr[]={7,1,5,3,6,4};
+//int arr[]={7,6,4,3,1};
+//int arr[]={1,2,3,4,5};
+//int arr[]={2,1,2,0,1};
+//int arr[]={1,2,4,2,5,7,2,4,9,0};
+int arr[]={2,7,1,4};
+int stock[]=new int[arr.length+1];
+
+int sum=0, max=Integer.MIN_VALUE;
+int profit=0;
+int i=0,j;
+
+for(j=i+1; j<arr.length; j++){
+
+if(arr[i]<=arr[j]){
+stock[i]=0;
+sum=arr[j]-arr[i];
+stock[j]=sum;
+
+if(max<sum){
+max=sum;
+}
+else if(max>sum){
+i=j;
+
+stock[i]=0;
+max=0;
+}
+}
+
+if(arr[i]>arr[j]){
+i=j;
+stock[i]=0;
+max=0;
+}
+}
+
+System.out.println(Arrays.toString(stock));
+
+for(int k=0; k<stock.length; k++){
+if(stock[k]==0 && k!=0){
+profit=profit+stock[k-1];
+System.out.println("profit="+profit);
+}
+}
+
+}
+}
