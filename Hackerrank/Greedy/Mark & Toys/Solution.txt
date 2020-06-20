@@ -1,0 +1,13 @@
+public class Solution {
+    static int maximumToys(int[] prices, int k) {
+
+        Arrays.sort(prices);
+        int i=0,Toys=0;
+        while(i<prices.length && k>=prices[i]){
+            k=k-prices[i];
+            Toys++;
+            i++;
+        }
+
+        return Toys;
+    }

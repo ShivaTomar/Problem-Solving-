@@ -1,0 +1,18 @@
+public class Solution {
+
+    // Complete the toys function below.
+    static int toys(int[] w) {
+
+        Arrays.sort(w);
+        int containers=1;
+        int i=0;
+        for(int j=0; j<w.length; j++){
+            int unit=w[i]+4;
+            if(w[j]>unit){
+                containers++;
+                i=j;
+            }
+        }
+        return  containers;
+
+    }

@@ -1,0 +1,18 @@
+public class Solution {
+    static long marcsCakewalk(int[] calorie) {
+        
+        Arrays.sort(calorie);
+        int p=calorie.length-1;
+        int i=0;
+        long sum=0;
+
+        while(i<calorie.length){
+
+            double x=Math.pow(2, p);
+            sum+=(long)(x*calorie[i]);
+            p--;
+            i++;
+            
+        }
+        return sum;
+    }

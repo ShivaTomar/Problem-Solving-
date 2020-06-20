@@ -1,0 +1,29 @@
+public class Solution {
+
+    static long candies(int n, int[] arr) {
+
+        int Left[]=new int[arr.length];
+        int Right[]=new int[arr.length];
+
+
+        for(int j=0; j<arr.length; j++)
+        {
+            Left[j]=1;
+            Right[j]=1;
+        }
+
+        for(int i=1; i<Left.length; i++){
+            if(arr[i-1]<arr[i]) Left[i]=Left[i-1]+1;
+        }
+
+        for(int i=Right.length-2; i>=0; i--){ 
+             if(arr[i]>arr[i+1]) Right[i]=Right[i+1]+1;
+        }
+
+        long candies=0;
+        for(int i=0; i<arr.length; i++)
+        { 
+            candies+=Math.max(Left[i], Right[i]);
+        }
+        return candies;
+    }
