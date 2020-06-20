@@ -1,0 +1,24 @@
+class Peak{
+   public int peakElement(int[] a,int n){
+
+       int left=0,right=a.length-1;
+       int mid=0;
+       
+       if(a.length==1) return 0;
+       if(a[left]>a[left+1]) return left;
+       if(a[a.length-2]<a[a.length-1]) return a.length-1;
+       
+       while(left<=right){
+           
+           mid=(left+right)/2;
+
+           if(a[mid-1]<a[mid] && a[mid]>a[mid+1]) return mid;
+           
+           else if(a[mid-1]>a[mid]) right=mid;
+           
+           else if(a[mid-1]<a[mid]) left=mid+1;
+           
+       }
+       throw new IllegalArgumentException("NOT FOUND");
+    }
+}

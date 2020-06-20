@@ -1,0 +1,22 @@
+class GfG {
+    public int findExtra(int a[], int b[], int n) {
+    
+        int Left=0,Right=a.length-1;
+        int index=-1;
+        
+        if(a[0]!=b[0]) return 0;
+        if(b[b.length-1]!=a[a.length-1]) return a.length-1;
+        
+        while(Left<=Right){
+            
+            int mid=(Right+Left)/2;
+            if(a[mid]==b[mid]) Left=mid+1;
+            
+            else{
+                index=mid;
+                Right=mid-1;
+            }
+        }
+        return index;
+    }
+}
