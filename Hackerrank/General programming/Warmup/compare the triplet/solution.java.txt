@@ -1,0 +1,37 @@
+import java.util.Scanner;
+public class triplet{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int count=0,count1=0,count2=0,sum=0,sum1=0,sum2=0;
+        int value1=0,value2=0;
+        int x=sc.nextInt();
+        int y=sc.nextInt();
+        int z=sc.nextInt();
+        int a=sc.nextInt();
+        int b=sc.nextInt();
+        int c=sc.nextInt();
+
+        if(x>a){
+            count++;
+        }
+        if(y>b){
+            count1++;
+        }
+        if(z>c){
+            count2++;
+        }
+        if(x<a){
+            sum++;
+        }
+        if(y<b){
+            sum1++;
+        }
+        if(z<c){
+            sum2++;
+        }
+        value1=count+count1+count2;
+        value2=sum+sum1+sum2;
+        System.out.println(value1+ " " +value2);
+        
+    }
+}

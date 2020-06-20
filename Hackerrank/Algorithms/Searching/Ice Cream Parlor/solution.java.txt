@@ -1,0 +1,35 @@
+import java.util.Scanner;
+public class icecream{
+public static void main(String[] args){
+Scanner sc=new Scanner(System.in);
+int t = sc.nextInt();
+
+for(int v =0; v<t;v++){
+
+int m=sc.nextInt();
+int n=sc.nextInt();
+int cost[]=new int[n];
+for(int k=0; k<n; k++){
+cost[k]=sc.nextInt();
+}
+
+
+for(int i=0; i<n; i++){
+for(int j=i+1; j<n; j++){
+int sum=cost[i]+cost[j];
+if(sum==m){
+System.out.println((i+1)+ " " +(j+1));
+break;
+
+
+}
+
+}
+
+}
+
+}
+
+}
+}
+

@@ -1,0 +1,43 @@
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+public class Solution.java {
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int t=sc.nextInt();
+        for(int pos=0; pos<t; pos++){
+            
+            int n=sc.nextInt();
+            int max_value=Integer.MIN_VALUE;
+            int sum=0,subseq=0,temp=0;
+            
+            int arr[]=new int[n];
+            for(int j=0; j<n; j++){
+                arr[j]=sc.nextInt();
+                }
+
+                for(int i=0; i<n; i++){
+                    sum=sum+arr[i];
+                    if(max_value<sum){
+                        max_value=sum;
+                        }
+                        if(sum<0){
+                            sum=0;
+                            }
+                            if(arr[i]>0){
+                                subseq=subseq+arr[i];
+                                temp++;
+                                }
+                                }
+                                if(temp==0){
+                                    subseq=max_value;
+                                    }
+                                    System.out.println(max_value+" "+subseq);
+                                    }
+                                    }
+                                    }
