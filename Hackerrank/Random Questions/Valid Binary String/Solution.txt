@@ -1,0 +1,34 @@
+ public static int minimumMoves(String s, int d) {
+
+       int zero=0,c=0;
+       char [] x=new char[s.length()];
+        
+        for(int i=0; i<x.length; i++) x[i]=s.charAt(i);
+        
+        for(int i=0; i<d; i++){
+            if(x[i]=='0') zero++;
+
+            if(i==d-1 && zero==d){
+                x[i]='1';
+                c++;
+                zero--;
+            }
+            }
+
+            for(int i=d; i<x.length; i++){
+            
+               if(x[i]=='0') zero++;
+                
+                if(x[i-d]=='0') zero--;
+                
+                if(zero==d){
+                    x[i]='1';
+                    c++;
+                    zero--;
+                }
+            }
+            
+            return c;
+            }
+            }
+    

@@ -1,0 +1,28 @@
+import java.util.Scanner;
+import java.util.Arrays;
+
+public class sum_pairs
+{
+public static void main(String[] args)
+{
+Scanner sc=new Scanner(System.in);
+int count=0;
+int y=0;
+int n=sc.nextInt();
+int x=sc.nextInt();
+int a[]=new int[n];
+for(int i=0; i<n; i++){
+a[i]=sc.nextInt();
+}
+
+for(int j=0; j<n; j++){
+for(int k=j+1; k<n; k++){
+y=(a[j]+a[k]);
+if(y%x==0){
+count++;
+}
+}
+}
+System.out.println(count);
+}
+}

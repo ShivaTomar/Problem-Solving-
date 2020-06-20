@@ -1,0 +1,29 @@
+import java.util.Scanner;
+public class grading{
+public static void main(String[] args){
+Scanner sc=new Scanner(System.in);
+int students=sc.nextInt();
+for(int i=0; i<students; i++){
+
+int grade=sc.nextInt();
+
+if(grade<38){ 
+System.out.println(grade);
+}
+
+else if((grade+1)%5==0){
+System.out.println(grade+1);
+}
+
+else if((grade+2)%5==0){
+System.out.println(grade+2);
+}
+
+else if((grade+1)%5!=0 || (grade+2)%5!=0 ){
+System.out.println(grade);
+}
+
+
+}
+}
+}

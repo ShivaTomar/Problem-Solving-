@@ -1,0 +1,23 @@
+public class Solution {
+
+    // Complete the repeatedString function below.
+    static long repeatedString(String s, long n) {
+
+        long freq=0,Repeat=0;
+        long len=s.length();
+        for(int i=0; i<s.length(); i++){
+            if(s.charAt(i)=='a') freq++;
+        }
+
+        long mod=n/len;
+        long mod2=n%len;
+
+        if(mod2==0) return mod*freq;
+
+        Repeat=mod*freq;
+        for(int i=0; i<mod2; i++){
+            if(s.charAt(i)=='a') Repeat++;
+        }
+
+        return Repeat;
+    }

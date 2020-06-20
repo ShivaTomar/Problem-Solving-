@@ -1,0 +1,45 @@
+public class Solution {
+    static String happyLadybugs(String b) {
+
+        if(b.length()==1 && b.charAt(0)=='_') return "YES"; 
+        if(b.length()==2 && b.charAt(0)=='_' && b.charAt(1)=='_') return "YES"; 
+
+        Map<Character, Integer> map=new HashMap<>();
+
+        for(int i=0; i<b.length(); i++){
+            if(map.containsKey(b.charAt(i))) {
+                map.put(b.charAt(i), map.get(b.charAt(i))+1);
+            }
+             else map.put(b.charAt(i), 1); 
+        }
+        
+        if(map.containsKey('_')){
+                if(map.get('_')==b.length()) return "NO";
+        }
+
+        for(int i=0; i<b.length(); i++){
+            if(b.charAt(i)!='_' && map.get(b.charAt(i))<=1){
+                return "NO";
+            }
+        }
+        
+        if(!map.containsKey('_')) {
+            int j=0;
+            int pairs=0;
+            for(int i=j+1; i<b.length(); i++){
+                if(b.charAt(j)==b.charAt(i)) pairs++;
+                if(b.charAt(j)!=b.charAt(i)){
+                    if(pairs>=1){
+                        j=i;
+                        pairs=0;
+                    }
+                    else{
+                        return "NO";
+                    }
+                }
+            }
+        }
+
+        return "YES";
+
+    }

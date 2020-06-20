@@ -1,0 +1,12 @@
+ public static int getBattery(List<Integer> events) {
+
+        int Battery=50;
+        for(int i=0; i<events.size(); i++){
+            
+            Battery+=events.get(i);
+            if(Battery>100) Battery=100;
+        }
+        return Battery;
+    }
+
+}

@@ -1,0 +1,15 @@
+
+    public static int filledOrders(List<Integer> order, int k) {
+
+        int sell=0;
+        Collections.sort(order);
+        for(int i=0; i<order.size(); i++){
+            
+            if(order.get(i)<=k){
+                k-=order.get(i);
+                sell++;
+            }
+        }
+        return sell;
+    }
+}

@@ -1,0 +1,30 @@
+import java.util.*;
+public class main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int arr[]=new int[n];
+        for(int i=0;i<n;i++){
+            arr[i]=sc.nextInt();
+        }
+        int value=sc.nextInt();
+        int len=sc.nextInt();
+        int sum=0,count=0;
+        for(int j=0; j<len; j++){
+            sum+=arr[j];
+            if(sum==value){
+                count++;
+            }
+        }
+            for(int k=len; k<n; k++){
+                sum+=arr[k]-arr[k-len];
+                if(sum==value){
+                    count++;
+                }
+            }
+
+
+    
+        System.out.println(count);
+    }
+}

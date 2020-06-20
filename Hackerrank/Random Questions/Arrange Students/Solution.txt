@@ -1,0 +1,60 @@
+class Result {
+    public static String arrangeStudents(List<Integer> a, List<Integer> b) {
+        
+        List<Integer> list=new ArrayList<>();
+        String s="YES";
+        char gen1='G';
+        char gen2='G';
+        
+        Collections.sort(a);
+        Collections.sort(b);
+        
+        for(int i=0; i<a.size(); i++){
+            
+            int boy=a.get(i);
+            int girl=b.get(i);
+            
+            if(boy<girl){
+                if(gen1!='g' && gen2!='b'){
+              list.add(boy);
+              list.add(girl);
+                    gen1='b';
+                    gen2='g';
+                }
+                else return "NO";
+                
+            }
+
+            else if(girl<boy){
+                if(gen1!='b' && gen2!='g'){
+              list.add(girl);
+              list.add(boy);
+                    gen1='g';
+                    gen2='b';
+            }
+                else return "NO";
+            }
+
+            else if(girl==boy){
+                if(gen1=='g' && gen2=='b'){
+                    list.add(girl);
+                    list.a dd(boy);
+                }
+                
+                else if(gen1=='b' && gen2=='g'){
+                     list.add(boy);
+                     list.add(girl);
+                }
+            }
+        }
+        
+        for(int i=0; i<list.size()-1; i++){
+            if(list.get(i)>list.get(i+1)){
+                s="NO";
+                break;
+            }
+        }
+        
+        return s;
+    }
+}

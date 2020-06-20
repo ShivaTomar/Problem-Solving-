@@ -1,0 +1,30 @@
+import java.util.Scanner;
+public class finddigit{
+public static void main(String[] args){
+Scanner sc=new Scanner(System.in);
+int t=sc.nextInt();
+for(int j=0; j<t; j++){
+int num=sc.nextInt();
+int z=num;
+int count=0;
+int rem;
+while(num!=0){
+rem=num%10;
+//System.out.println("remainder = " +rem);
+
+num=num/10;
+//System.out.println(" num = " +num);
+
+
+if(rem!=0 && z%rem==0){
+count++;
+//System.out.println("z=" +z);
+//System.out.println(z+"%"+rem+" = "+z%rem );
+
+}
+
+}
+System.out.println(count);
+}
+}
+}

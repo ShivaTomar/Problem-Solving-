@@ -1,0 +1,32 @@
+import java.util.Scanner;
+public class hurdle{
+public static void main(String[] args){
+int max=0;
+Scanner sc=new Scanner(System.in);
+
+int s=0;
+int z=0;
+int n=sc.nextInt();
+int sum=sc.nextInt();
+
+int a[]=new int[n];
+for(int i=0; i<n; i++){
+a[i]=sc.nextInt();
+}
+
+max=a[0];
+for(int j=0; j<n; j++){
+if(a[j]>max){
+max=a[j];
+}
+}
+if(sum>max){
+max=0;
+System.out.println(max);
+}
+else if(sum<max){
+s=max-sum;
+System.out.println(s);
+}
+}
+}
