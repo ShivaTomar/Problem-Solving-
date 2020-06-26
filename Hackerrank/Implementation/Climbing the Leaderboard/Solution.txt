@@ -1,6 +1,4 @@
 public class Solution {
-
-    // Complete the climbingLeaderboard function below.
     static int[] climbingLeaderboard(int[] scores, int[] alice) {
 
         TreeSet<Integer> set = new TreeSet<>();
@@ -23,11 +21,11 @@ public class Solution {
                 }
                 position++;
             }
-        if(flag) result[i]=position;
-        else{
-            set.add(alice[i]);
-            result[i]=position;
-        }
-        }
-        return result;
-    }
+              if(flag) result[i]=position;
+              else{
+              set.add(alice[i]);
+              result[i]=position;
+         }
+         }
+         return result;
+     }
