@@ -1,0 +1,11 @@
+public class Solution {
+    static int viralAdvertising(int n) {
+
+        int liked=0,shared=5;
+        for(int i=1; i<=n; i++){
+            shared=shared/2;
+            liked=liked+shared;
+            shared=shared*3;
+        }
+        return liked;
+    }
