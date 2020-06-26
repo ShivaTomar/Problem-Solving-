@@ -1,0 +1,17 @@
+public class Solution {
+    static int beautifulDays(int i, int j, int k) {
+
+        int ans=0;
+        for(int x=i; x<=j; x++){
+            int num=x;
+            int rec=0;
+            while(num!=0){
+                int digit=num%10;
+                rec=rec*10+digit;
+                num=num/10;
+            }
+            if(Math.abs(rec-x)%k==0) ans++; 
+        }
+        return ans;
+
+    }
