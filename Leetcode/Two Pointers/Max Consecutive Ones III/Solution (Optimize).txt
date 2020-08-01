@@ -1,0 +1,30 @@
+class Solution {
+    public int longestOnes(int[] A, int K) {
+        
+        int sp = 0, length = 0, zero = 0, max = 0;
+        for(int fp=0; fp<A.length; fp++){
+            
+            if(A[fp] == 1) length++;
+            else if(A[fp] == 0) {
+                zero++;
+                length++;
+            }
+            
+            if(zero<=K) max = Math.max(length, max);
+            else if(zero>K){
+                
+                while(zero>K){       
+                    
+                    if(A[sp] == 1) length--;
+                    else{
+                        zero--;
+                        length--;
+                    }
+                    sp++;
+                }
+            }
+            max = Math.max(length, max);
+        }
+        return max;
+    }
+}

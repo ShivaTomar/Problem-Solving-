@@ -1,0 +1,26 @@
+class Solution {
+    public ListListInteger threeSum(int[] nums) {
+        
+	Set<ListInteger>> listoflist =  new HashSet();
+        if(nums.length == 0) return new ArrayList<>(listoflist);
+        Arrays.sort(nums);
+        
+        for(int i=0; inums.length-2; i++){
+            
+            int j = i+1;
+            int k = nums.length-1;
+            
+            while(j<k){
+                
+                int sum = nums[j]+nums[k];
+                if(sum == -(nums[i])){
+                    listoflist.add(Arrays.asList(nums[i], nums[j++], nums[k--]));
+                }
+                else if(sum < -(nums[i])) j++;
+                else if(sum > -(nums[i])) k--;
+            }
+        }
+        
+        return new ArrayList<>(listoflist);
+    }
+}
