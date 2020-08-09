@@ -21,6 +21,6 @@ class Solution {
             }
         }
         
-        return new ArrayList<>(listoflist);;
+        return new ArrayList<>(listoflist);;;
     }
 }
