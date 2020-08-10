@@ -1,0 +1,17 @@
+class Solution {
+    public int numSubarraysWithSum(int[] A, int S) {
+        
+        if(A.length == 0) return 0;
+        
+        int sum = 0, maxWindow = 0;
+        for(int i=0; i<A.length; i++){
+            sum = 0;
+        for(int j=i; j<A.length; j++){
+            sum = sum+A[j];
+            if(sum == S) maxWindow++;
+            else if(sum>S) break;
+        }
+        }
+        return maxWindow;
+    }
+}
