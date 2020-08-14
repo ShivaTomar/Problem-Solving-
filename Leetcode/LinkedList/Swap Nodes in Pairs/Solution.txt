@@ -1,0 +1,30 @@
+class Solution {
+    public ListNode swapPairs(ListNode head) {
+        
+        if(head == null) return head;
+        
+        ListNode prev = null, cur = head, forwd = head.next, forwdNxt = null;
+        
+        while(cur!=null & forwd!=null){
+            
+            forwdNxt = forwd.next;
+            
+            if(prev == null){
+                head = forwd;
+                forwd.next = cur;
+                cur.next = forwdNxt;
+            }
+            
+            else{
+                prev.next = forwd;
+                forwd.next = cur;
+                cur.next = forwdNxt;
+            }
+            
+            prev = cur;
+            cur = prev.next;
+            if(cur!=null) forwd = cur.next;
+        }
+        return head;
+    }
+}
